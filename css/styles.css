@@ -499,7 +499,7 @@ body {
 
 .article {
   padding: 278px 0 202px;
-  background: url(../images/services_back_articles.svg) no-repeat 150% 278px, url(../images/back-dots.svg) no-repeat 100% 105%;
+  background: url(../images/services_back_articles.svg) no-repeat 125% 278px, url(../images/back-dots.svg) no-repeat 100% 105%;
 }
 
 .article .article-wrapper {
