@@ -1,0 +1,741 @@
+    @import '_reset.scss';
+    @mixin text-parametr($color, $fsize, $fweight, $lheight) {
+        color: $color;
+        font-size: $fsize;
+        font-weight: $fweight;
+        line-height: $lheight;
+    }
+    
+    @mixin button-param ($color, $fsize, $fweight, $lheight, $indent, $border, $radius) {
+        color: $color;
+        font-size: $fsize;
+        font-weight: $fweight;
+        line-height: $lheight;
+        padding: $indent;
+        border: $border;
+        border-radius: $radius;
+    }
+    
+    $blue: #458FF6;
+    $black: #000;
+    $grey: #7D7987;
+    $white: #fff;
+    $colorlink: #1F1534;
+    body {
+        background-color: #fff;
+        color: $grey;
+        font-family: 'Mulish', sans-serif;
+    }
+    
+    .container {
+        max-width: 1220px;
+        margin: auto;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 56px 0 63px;
+        &__nav {
+            transform: translateY(5px);
+        }
+        &__nav__list {
+            display: flex;
+            justify-content: flex-end;
+        }
+        &__nav__list li {
+            display: inline-block;
+            margin-left: 40px;
+        }
+        &__nav__link {
+            text-decoration: none;
+            @include text-parametr($colorlink, 18px, 400, 23px);
+            opacity: 0.5;
+            &__nav__link:first-child {
+                margin-left: 0;
+            }
+        }
+        &__nav__link-active {
+            opacity: 1;
+            font-weight: 700;
+        }
+        &__menu {
+            border: none;
+            background: transparent;
+            transform: translateY(5px);
+            display: none;
+        }
+    }
+    
+    .about {
+        background: url(../images/back-dots.svg) no-repeat -50px 0;
+        &__text-wrapper {
+            background: url(../images/background-picture.png) no-repeat right 12px;
+            padding: 123px 0 155px;
+        }
+        &__text {
+            max-width: 440px;
+        }
+        &__title {
+            @include text-parametr($black, 48px, 700, 56px)
+        }
+        &__discription {
+            margin: 35px 0;
+            @include text-parametr($grey, 21px, 300, 32px)
+        }
+        &__button {
+            display: inline-block;
+            text-decoration: none;
+            @include button-param ($blue, 18px, 700, 30px, 13px 40px, none, 55px);
+            @include text-parametr($white, 18px, 700, 30px);
+            background-color: $blue;
+        }
+    }
+    
+    .services {
+        padding-top: 189px;
+        background-image: url(../images/services_back.svg);
+        background-repeat: no-repeat;
+        background-position: -45% 189px;
+        &__header {
+            max-width: 952px;
+            margin: auto;
+        }
+        &__title {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 56px;
+            color: $black;
+            text-align: center;
+            &::after {
+                content: '';
+                display: block;
+                width: 56px;
+                height: 2px;
+                background-color: $black;
+                margin: 26px auto 0;
+            }
+        }
+        &__discription {
+            margin: 33px 0 80px;
+            @include text-parametr($grey, 18px, 300, 30px)
+        }
+        &__cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background: url(../images/back-dots.svg) no-repeat right 285px;
+        }
+        &__card {
+            margin: 0 12px 37px 12px;
+            background-color: #fff;
+            box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+            border-radius: 20px;
+            padding: 47px 50px 47px 38px;
+            max-width: 350px;
+            &__title {
+                margin-top: 20px;
+                @include text-parametr($black, 24px, 700, 56px)
+            }
+            &__discription {
+                @include text-parametr($grey, 16px, 300, 28px)
+            }
+        }
+        &__icon-wrapper {
+            height: 95px;
+            vertical-align: center;
+        }
+        &__button-wrapper {
+            text-align: center;
+        }
+        &__button {
+            display: inline-block;
+            margin-top: 35px;
+            text-decoration: none;
+            @include button-param ($blue, 18px, 700, 30px, 13px 50px, $blue 1.4px solid, 55px)
+        }
+    }
+    
+    .provides {
+        background: url(../images/background-healthcare-provide.png) no-repeat 10% 100%;
+        .provides-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            padding: 277px 0 32px;
+        }
+        &__text {
+            max-width: 486px;
+        }
+        &__title {
+            @include text-parametr($black, 36px, 700, 56px);
+            &::after {
+                content: '';
+                display: block;
+                width: 56px;
+                height: 2px;
+                background-color: $black;
+                margin: 26px 0 31px;
+            }
+        }
+        &__discription {
+            max-width: 396px;
+            @include text-parametr($grey, 18px, 300, 30px)
+        }
+        &__button {
+            display: inline-block;
+            margin-top: 40px;
+            text-decoration: none;
+            @include button-param ($blue, 18px, 700, 30px, 13px 50px, $blue 1.4px solid, 55px)
+        }
+    }
+    
+    .mobile-apps {
+        position: relative;
+        background: url(../images/background-mobile-apps.png) no-repeat 85% 100%;
+        &__picture {
+            position: absolute;
+            top: -7px;
+            right: -46px;
+        }
+        .mobile-apps-wrapper {
+            display: flex;
+            padding: 265px 0 32px 90px;
+        }
+        &__text {
+            max-width: 362px;
+        }
+        &__title {
+            @include text-parametr($black, 36px, 700, 56px);
+            &::after {
+                content: '';
+                display: block;
+                width: 56px;
+                height: 2px;
+                background-color: $black;
+                margin: 26px 0 31px;
+            }
+        }
+        &__discription {
+            max-width: 396px;
+            @include text-parametr($grey, 18px, 300, 30px)
+        }
+        &__button {
+            display: inline-block;
+            margin-top: 40px;
+            text-decoration: none;
+            @include button-param ($blue, 18px, 700, 30px, 13px 68px 13px 50px, $blue 1.4px solid, 55px);
+            background: url(../images/Vector.svg) no-repeat 150px center;
+        }
+    }
+    
+    .review {
+        padding-top: 266px;
+        .review-picture {
+            background: url(../images/back-dots.svg) no-repeat 0 280px;
+        }
+        .review-wrapper {
+            max-width: 1120px;
+            margin: auto;
+            background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
+            border-radius: 24px;
+            padding: 74px 118px 79px;
+            text-align: center;
+            position: relative;
+        }
+        &__picture {
+            position: absolute;
+            top: -7px;
+            right: -46px;
+        }
+        &__main-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__title {
+            @include text-parametr($white, 36px, 700, 48px);
+            &::after {
+                content: '';
+                display: block;
+                width: 56px;
+                height: 2px;
+                background-color: $white;
+                margin: 26px auto 66px;
+            }
+        }
+        &__main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__text {
+                margin-left: 29px;
+                max-width: 183px;
+                @include text-parametr(rgba(255, 255, 255, 0.85), 18px, 400, 48px);
+            }
+            &__name {
+                @include text-parametr($white, 22px, 700, 48px);
+            }
+        }
+        &__text {
+            max-width: 420px;
+            text-align: start;
+            @include text-parametr(rgba(255, 255, 255, 0.9), 19px, 400, 30px)
+        }
+    }
+    
+    .article {
+        padding: 278px 0 202px;
+        background: url(../images/services_back_articles.svg) no-repeat 150% 278px, url(../images/back-dots.svg) no-repeat 100% 105%;
+        .article-wrapper {
+            background: url(../images/back-dots.svg) no-repeat 0 125px;
+            max-width: 1140px;
+            margin: auto;
+            text-align: center;
+        }
+        &__title {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 56px;
+            color: $black;
+            text-align: center;
+            &::after {
+                content: '';
+                display: block;
+                width: 56px;
+                height: 2px;
+                background-color: $black;
+                margin: 26px auto 79px;
+            }
+        }
+        &__card-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &__card {
+            margin: 0 10px;
+            background-color: #fff;
+            box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+            border-radius: 20px;
+            max-width: 350px;
+            text-align: start;
+            &__picture {
+                border-radius: 20px 20px 0 0;
+            }
+            &__text {
+                padding: 24px 51px 35px 33px;
+            }
+            &__title {
+                @include text-parametr($black, 21px, 700, 32px)
+            }
+            &__text {
+                @include text-parametr($grey, 16px, 300, 28px)
+            }
+            &__button {
+                display: inline-block;
+                margin-top: 25px;
+                width: 115px;
+                text-decoration: none;
+                background: url(../images/vector-right.svg) no-repeat 100px 55%;
+                @include button-param ($blue, 17px, 600, 28px, 0, none, 0);
+            }
+        }
+        &__button {
+            display: inline-block;
+            margin-top: 72px;
+            text-decoration: none;
+            @include button-param ($blue, 18px, 700, 30px, 13px 66px, $blue 1.4px solid, 55px);
+        }
+    }
+    
+    .footer {
+        background: url(../images/back-dots.svg) no-repeat -1% 105%, linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+        padding: 119px 0;
+        .footer-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &__about {
+            max-width: 390px;
+            &__text {
+                margin: 17px 0 31px;
+                @include text-parametr($white, 18px, 300, 28px)
+            }
+            &__addition {
+                @include text-parametr($white, 16px, 300, 28px)
+            }
+        }
+        &__links-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 684px;
+        }
+        &__links {
+            max-width: 132px;
+            margin: 0 10px 20px;
+            &__title {
+                @include text-parametr($white, 20px, 700, 58px)
+            }
+            &__link {
+                text-decoration: none;
+                @include text-parametr($white, 18px, 300, 38px)
+            }
+        }
+    }
+    
+    @media (max-width: 1280px) {
+        .container {
+            max-width: 92%;
+        }
+    }
+    
+    @media (max-width: 1210px) {
+        .provides__text {
+            max-width: 350px;
+        }
+        .article__card {
+            max-width: 300px;
+            &__text {
+                padding: 24px 20px 35px 20px;
+            }
+        }
+    }
+    
+    @media (max-width: 1170px) {
+        .provides {
+            &__text {
+                max-width: 350px;
+            }
+        }
+        .mobile-apps {
+            .mobile-apps-wrapper {
+                padding-left: 0;
+            }
+            &__text {
+                max-width: 300px;
+            }
+        }
+        .footer {
+            padding: 50px 0;
+        }
+        .footer-wrapper {
+            flex-direction: column-reverse;
+        }
+        .footer__links-wrapper {
+            justify-content: space-between;
+            width: 684px;
+            margin-bottom: 30px;
+        }
+    }
+    
+    @media (max-width: 1120px) {
+        .review__main {
+            flex-direction: column;
+        }
+        .footer__links-wrapper {
+            justify-content: space-between;
+            width: 684px;
+            margin-bottom: 30px;
+        }
+    }
+    
+    @media (max-width: 1080px) {
+        .about__text-wrapper {
+            background-position: center 0;
+            background-size: 50%;
+            padding: 430px 0 30px;
+            text-align: center;
+        }
+        .about__text {
+            max-width: 400px;
+            margin: auto;
+        }
+        .services {
+            padding-top: 30px;
+            &__header {
+                max-width: 700px;
+                text-align: center;
+            }
+        }
+        .provides {
+            background-position: center 0;
+            background-size: 50%;
+            text-align: center;
+            .provides-wrapper {
+                justify-content: center;
+                padding: 430px 0 32px;
+            }
+            &__text {
+                max-width: 486px;
+            }
+            &__discription {
+                max-width: 396px;
+            }
+            .article__card-wrapper {
+                justify-content: space-evenly;
+            }
+            .article__card {
+                max-width: 350px;
+            }
+            .article__card:last-child {
+                display: none;
+            }
+        }
+        .mobile-apps {
+            text-align: center;
+            background-position: center 0;
+            background-size: 50%;
+            .mobile-apps-wrapper {
+                display: flex;
+                padding: 430px 0 30px;
+            }
+            &__text {
+                max-width: 350px;
+                margin: auto;
+            }
+        }
+        .review {
+            padding-top: 50px;
+        }
+        .article {
+            padding: 50px 0 50px;
+        }
+    }
+    
+    @media (max-width: 1045px) {
+        .article__card-wrapper {
+            justify-content: space-evenly;
+        }
+        .article__card {
+            margin-bottom: 20px;
+        }
+        .article__card:last-child {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 960px) {
+        .header {
+            &__nav__list li {
+                display: inline-block;
+                margin-left: 20px;
+            }
+        }
+        .about__text-wrapper {
+            padding: 350px 0 30px;
+        }
+        .provides {
+            background-position: center 30px;
+            .provides-wrapper {
+                padding: 350px 0 32px;
+            }
+            &__text {
+                max-width: 400px;
+            }
+        }
+        .mobile-apps {
+            .mobile-apps-wrapper {
+                display: flex;
+                padding: 350px 0 30px;
+            }
+        }
+        .review {
+            .review-wrapper {
+                padding: 74px 50px;
+            }
+            &__title {
+                &::after {
+                    margin: 26px auto;
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 820px) {
+        .about {
+            &__title {
+                @include text-parametr($black, 40px, 700, 56px)
+            }
+        }
+        .services {
+            &__card {
+                padding: 47px 20px;
+                max-width: 250px;
+            }
+        }
+        .provides {
+            &__title {
+                &::after {
+                    margin: 20px auto;
+                }
+            }
+        }
+        .mobile-apps {
+            &__title {
+                &::after {
+                    margin: 20px auto;
+                }
+            }
+        }
+        .review {
+            &__main-wrapper {
+                flex-direction: column;
+            }
+            &__text {
+                max-width: 400px;
+                text-align: center;
+                margin-top: 30px;
+            }
+        }
+    }
+    
+    @media (max-width: 750px) {
+        .header {
+            &__nav {
+                display: none;
+            }
+            &__menu {
+                display: inline-block;
+            }
+        }
+        .footer__links-wrapper {
+            width: 500px;
+        }
+    }
+    
+    @media (max-width: 660px) {
+        .about__text-wrapper {
+            padding: 270px 0 30px;
+        }
+        .services {
+            &__button {
+                margin-top: 0;
+            }
+        }
+        .provides {
+            .provides-wrapper {
+                padding: 270px 0 32px;
+            }
+        }
+        .mobile-apps {
+            .mobile-apps-wrapper {
+                padding: 270px 0 0;
+            }
+        }
+        .review {
+            .review-wrapper {
+                padding: 74px 50px;
+            }
+            &__title {
+                &::after {
+                    margin: 26px auto;
+                }
+            }
+        }
+        .article {
+            &__button {
+                margin-top: 20px;
+            }
+        }
+    }
+    
+    @media (max-width: 595px) {
+        .services {
+            &__discription {
+                margin-bottom: 30px;
+            }
+            &__card:nth-child(4),
+            &__card:nth-child(5),
+            &__card:nth-child(6) {
+                display: none;
+            }
+        }
+    }
+    
+    @media (max-width: 520px) {
+        .about__text-wrapper {
+            padding: 200px 0 30px;
+        }
+        .services {
+            &__button {
+                margin-top: 0;
+            }
+        }
+        .provides {
+            .provides-wrapper {
+                padding: 220px 0 32px;
+            }
+        }
+        .mobile-apps {
+            .mobile-apps-wrapper {
+                padding: 180px 0 0;
+            }
+        }
+        .review {
+            .review-wrapper {
+                padding: 50px 30px;
+            }
+            &__title {
+                &::after {
+                    margin: 26px auto;
+                }
+            }
+        }
+        .article {
+            &__button {
+                margin-top: 20px;
+            }
+            &__title {
+                &::after {
+                    margin: 26px auto 30px;
+                }
+            }
+        }
+        .footer__links-wrapper {
+            width: 400px;
+        }
+    }
+    
+    @media (max-width: 425px) {
+        .footer {
+            &__about {
+                max-width: 300px;
+                &__addition {
+                    @include text-parametr($white, 14px, 300, 28px)
+                }
+            }
+            &__links-wrapper {
+                flex-direction: column;
+            }
+        }
+    }
+    
+    @media (max-width: 375px) {
+        .about {
+            &__text-wrapper {
+                padding-top: 150px;
+            }
+            &__text {
+                max-width: 260px;
+            }
+        }
+        .services {
+            &__button {
+                margin-top: 0;
+            }
+        }
+        .provides {
+            .provides-wrapper {
+                padding-top: 160px;
+            }
+        }
+        .mobile-apps {
+            .mobile-apps-wrapper {
+                padding-top: 120px;
+            }
+        }
+    }
